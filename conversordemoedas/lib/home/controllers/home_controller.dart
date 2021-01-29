@@ -7,13 +7,15 @@ class Controller extends GetxController{
   ApiModel data;
   var numero = 0.0.obs;
   var valortotal = 0.0.obs;
+  var estaconvertendo = false.obs;
   
   void conversor() async{
     Api api = Api();
-
+    estaconvertendo.value= true;
     final response = await api.fetchData();
 
     if(response == null){
+      estaconvertendo.value = false;
       Get.snackbar(
         'Error',
         'Normomento não esta conseguindo conveter!'
@@ -34,6 +36,7 @@ class Controller extends GetxController{
 
   void multiplica(){
     valortotal.value  = numero.value * data.usdBrl;
+    estaconvertendo.value = false;
     
 
   }
