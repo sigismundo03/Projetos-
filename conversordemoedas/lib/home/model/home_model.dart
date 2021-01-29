@@ -6,40 +6,20 @@ import 'dart:convert';
 
 class ApiModel {
     ApiModel({
-        this.global,
+        this.usdBrl,
     });
 
-    final Global global;
+    final double usdBrl;
 
     factory ApiModel.fromRawJson(String str) => ApiModel.fromJson(json.decode(str));
 
     String toRawJson() => json.encode(toJson());
 
     factory ApiModel.fromJson(Map<String, dynamic> json) => ApiModel(
-        global: json["Global"] == null ? null : Global.fromJson(json["Global"]),
+        usdBrl: json["USD_BRL"] == null ? null : json["USD_BRL"].toDouble(),
     );
 
     Map<String, dynamic> toJson() => {
-        "Global": global == null ? null : global.toJson(),
-    };
-}
-
-class Global {
-    Global({
-        this.moeda,
-    });
-
-    final double moeda;
-
-    factory Global.fromRawJson(String str) => Global.fromJson(json.decode(str));
-
-    String toRawJson() => json.encode(toJson());
-
-    factory Global.fromJson(Map<String, dynamic> json) => Global(
-        moeda: json["moeda"] == null ? null : json["moeda"].toDouble(),
-    );
-
-    Map<String, dynamic> toJson() => {
-        "moeda": moeda == null ? null : moeda,
+        "USD_BRL": usdBrl == null ? null : usdBrl,
     };
 }

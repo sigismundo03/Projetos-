@@ -49,7 +49,7 @@ class ConversoWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                  crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text('Valor é = 0',
+                  Text('Valor é = 0\$',
                    style: TextStyle( 
                      color: Colors.green
                      ,
