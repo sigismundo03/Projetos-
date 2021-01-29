@@ -1,16 +1,17 @@
-# conversordemoedas
+# Conversor de moedas
 
-A new Flutter project.
+<h1 aling = "center">
+<img src = "./assets/images/conversor.gif">
 
-## Getting Started
+</h1>
 
-This project is a starting point for a Flutter application.
+##  Sobre
+**Este projeto tem como objetivo converter a moeda USD para BRL, através de uma API e usar uma arquitetura MVC para ajudar nesse processo**  
 
-A few resources to get you started if this is your first Flutter project:
+## 🔨 Ferramentas
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Flutter](https://flutter.dev/docs) 
+- [Dio](https://pub.dev/packages/dio)
+- [Get](https://pub.dev/packages/get)
+- [URL da Api](https://free.currencyconverterapi.com/)
