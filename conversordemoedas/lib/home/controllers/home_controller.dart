@@ -1,5 +1,6 @@
 import 'package:conversordemoedas/home/model/home_model.dart';
 import 'package:conversordemoedas/home/repository/home_repository.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Controller extends GetxController{
@@ -17,8 +18,12 @@ class Controller extends GetxController{
     if(response == null){
       estaconvertendo.value = false;
       Get.snackbar(
+        
         'Error',
-        'Normomento não esta conseguindo conveter!'
+        'Normomento não esta conseguindo conveter!',
+        backgroundColor: Colors.red,
+        colorText: Colors.white,
+        
       );
     } else{
       data = response;
