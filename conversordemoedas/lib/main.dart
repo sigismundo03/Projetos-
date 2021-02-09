@@ -5,7 +5,12 @@ import 'home/views/home_view.dart';
 
 void main() {
   runApp(GetMaterialApp(
+    debugShowCheckedModeBanner: false,
     title: "Conversor",
+    theme: ThemeData.dark(
+      
+    ),
+
     home: HomeView(),
   ));
 }

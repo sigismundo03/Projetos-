@@ -1,12 +1,13 @@
 import 'package:conversordemoedas/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
- import 'package:get/get.dart';
+import 'package:get/get.dart';
+//import '../widgets/converso_widget.dart';
+import '../widgets/drawer_widget.dart';
 
 // ignore: must_be_immutable
 class HomeView extends StatelessWidget {
   
   Controller controller = Get.put(Controller());
-
   @override
   Widget build(BuildContext context) {
     
@@ -15,7 +16,9 @@ class HomeView extends StatelessWidget {
         title: Text("Converso de Moeda"),
         centerTitle: true,
       ),
-    
+    drawer: Drawer(
+      child: DrawerWidget(),
+    ),
     // body: ListView.builder(
     //     itemCount: 5,
     //     itemBuilder: (context,index){
@@ -60,27 +63,15 @@ class HomeView extends StatelessWidget {
                     
                   ),
                 ),
-                  GetX<Controller>(
-                  builder: (snapshot) {
-                    return snapshot.estaconvertendo.value ? Center(
-                       child: CircularProgressIndicator(
-                         backgroundColor: Colors.white,
-                       )
-                     ) 
-                     
-                    :
-                     
-                    RaisedButton(
-                     child:Text('Converter',
-                     style: TextStyle(color: Colors.white),
-                     ),
-                     color: Colors.green,
-                     onPressed: (){
-                       controller.conversor();
-                     },
-                     
-                    );
-                  }
+                RaisedButton(
+                 child: Text('Converter',
+                 style: TextStyle(color: Colors.white),
+                 ),
+                 color: Colors.green,
+                 onPressed: (){
+                   controller.conversor();
+                 },
+                 
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
