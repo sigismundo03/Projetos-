@@ -1,28 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/route_manager.dart';
 // FontAwesomeIcons.dollarSign
 class DrawerWidget extends StatelessWidget {
- 
- title( String name, IconData icons ){
+
+ final Color cor =  Colors.amber; 
+ title( String name, IconData icons,  Function onetap ){
     return Container(
           decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(color : Colors.amber)),
+            border: Border(bottom: BorderSide(color : cor)),
           ),
           child: ListTile(
             leading: FaIcon(icons,
-             color: Colors.amber,
+             color: cor,
             
             ),
             title: Text(
               '$name',
-              style: TextStyle(color: Colors.amber,),
+              style: TextStyle(color: cor,),
             
             ),
             trailing: Icon(Icons.arrow_right,
-             color: Colors.amber,
+             color:cor,
 
             ),
-            onTap: (){},
+            onTap: onetap,
 
 
           ),
@@ -77,11 +79,11 @@ class DrawerWidget extends StatelessWidget {
           ),
           
         ),
-        title('Conversor',FontAwesomeIcons.dollarSign),
-        title('Bitcoin',FontAwesomeIcons.btc),
-        title('Ethereum',FontAwesomeIcons.ethereum),
-        title('Litecoin',FontAwesomeIcons.liraSign),
-        title('Ripple',FontAwesomeIcons.rupeeSign),
+        title('Conversor',FontAwesomeIcons.dollarSign, (){Get.back();}),
+        title('Bitcoin',FontAwesomeIcons.btc,(){Get.back();}),
+        title('Ethereum',FontAwesomeIcons.ethereum,(){Get.back();}),
+        title('Litecoin',FontAwesomeIcons.liraSign,(){Get.back();}),
+        title('Ripple',FontAwesomeIcons.rupeeSign,(){Get.back();}),
         
         
       ],
