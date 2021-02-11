@@ -1,6 +1,34 @@
 import 'package:flutter/material.dart';
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// FontAwesomeIcons.dollarSign
 class DrawerWidget extends StatelessWidget {
+ 
+ title( String name, IconData icons ){
+    return Container(
+          decoration: BoxDecoration(
+            border: Border(bottom: BorderSide(color : Colors.amber)),
+          ),
+          child: ListTile(
+            leading: FaIcon(icons,
+             color: Colors.amber,
+            
+            ),
+            title: Text(
+              '$name',
+              style: TextStyle(color: Colors.amber,),
+            
+            ),
+            trailing: Icon(Icons.arrow_right,
+             color: Colors.amber,
+
+            ),
+            onTap: (){},
+
+
+          ),
+        );
+ }
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -49,103 +77,12 @@ class DrawerWidget extends StatelessWidget {
           ),
           
         ),
-        Container(
-          decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(color : Colors.amber)),
-          ),
-          child: ListTile(
-            leading: Icon(
-              Icons.monetization_on,
-              color: Colors.amber,  
-              
-            ),
-            title: Text(
-              'Conversor',
-              style: TextStyle(color: Colors.amber,),
-            
-            ),
-            trailing: Icon(Icons.arrow_right,
-             color: Colors.amber,
-
-            ),
-            onTap: (){},
-
-
-          ),
-        ),
-
-        Container(
-          decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(color : Colors.amber)),
-          ),
-          child: ListTile(
-            title: Text(
-              'Bitcoin',
-              style: TextStyle(color: Colors.amber,),
-            
-            ),
-            
-            onTap: (){},
-             trailing: Icon(Icons.arrow_right,
-             color: Colors.amber,
-
-            ),
-
-          ),
-        ),
-        Container(
-          decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(color : Colors.amber)),
-          ),
-          child: ListTile(
-            title: Text(
-              'Ethereum',
-              style: TextStyle(color: Colors.amber,),
-            
-            ),
-            onTap: (){},
-             trailing: Icon(Icons.arrow_right,
-             color: Colors.amber,
-
-            ),
-
-          ),
-        ),Container(
-          decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(color : Colors.amber)),
-          ),
-          child: ListTile(
-            title: Text(
-              'Litecoin',
-              style: TextStyle(color: Colors.amber,),
-            
-            ),
-            onTap: (){},
-             trailing: Icon(Icons.arrow_right,
-             color: Colors.amber,
-
-            ),
-
-          ),
-        ),
-        Container(
-          decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(color : Colors.amber)),
-          ),
-          child: ListTile(
-            title: Text(
-              'Ripple',
-              style: TextStyle(color: Colors.amber,),
-            
-            ),
-             trailing: Icon(Icons.arrow_right,
-             color: Colors.amber,
-
-            ),
-            onTap: (){},
-
-          ),
-        ),
+        title('Conversor',FontAwesomeIcons.dollarSign),
+        title('Bitcoin',FontAwesomeIcons.btc),
+        title('Ethereum',FontAwesomeIcons.ethereum),
+        title('Litecoin',FontAwesomeIcons.liraSign),
+        title('Ripple',FontAwesomeIcons.rupeeSign),
+        
         
       ],
       
