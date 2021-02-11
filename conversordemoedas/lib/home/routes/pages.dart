@@ -1,4 +1,5 @@
 import 'package:conversordemoedas/home/routes/routes.dart';
+import 'package:conversordemoedas/home/views/detalhe_view.dart';
 import 'package:conversordemoedas/home/views/home_view.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +14,7 @@ class Pages {
   ),
    GetPage(
     name: Routes.DETALHE,
-    page: () {},
+    page: () =>  DetalheView(),
     
   ),
 

@@ -36,16 +36,17 @@ class DrawerWidget extends StatelessWidget {
     return ListView(
       children: [
         DrawerHeader(
-        
+          
           decoration: BoxDecoration(
-            
              gradient: LinearGradient(
               colors: <Color> [
                 Colors.amber,
                 Colors.amberAccent,
 
               ],
-            )
+            ),
+            // color: cor,
+            
 
           ),
           child: Column(
@@ -79,9 +80,9 @@ class DrawerWidget extends StatelessWidget {
           ),
           
         ),
-        title('Conversor',FontAwesomeIcons.dollarSign, (){Get.back();}),
-        title('Bitcoin',FontAwesomeIcons.btc,(){Get.back();}),
-        title('Ethereum',FontAwesomeIcons.ethereum,(){Get.back();}),
+        title('Conversor',FontAwesomeIcons.dollarSign, (){Get.back(); Get.offNamed("/");}),
+        title('Bitcoin',FontAwesomeIcons.btc,(){Get.back();  Get.offNamed("/detalhe");}),
+        title('Ethereum',FontAwesomeIcons.ethereum,(){Get.back(); Get.toNamed("/detalhe");}),
         title('Litecoin',FontAwesomeIcons.liraSign,(){Get.back();}),
         title('Ripple',FontAwesomeIcons.rupeeSign,(){Get.back();}),
         

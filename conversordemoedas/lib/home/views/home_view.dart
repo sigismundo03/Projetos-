@@ -12,11 +12,17 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     
     return Scaffold(
+      
       appBar: AppBar(
-        title: Text("Converso de Moeda"),
+        title: Text("Converso de Moeda",
+            style: TextStyle(color: Colors.amber),
+            
+          ),
         centerTitle: true,
       ),
     drawer: Drawer(
+      
+      
       child: DrawerWidget(),
     ),
     // body: ListView.builder(
@@ -31,7 +37,7 @@ class HomeView extends StatelessWidget {
     body:Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: 200,
+        height: 260,
         width: 400,
         child: Card(
           elevation: 10,
@@ -45,7 +51,12 @@ class HomeView extends StatelessWidget {
                    mainAxisAlignment: MainAxisAlignment.start,
                    crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(' USD Para BRL'),
+                    Text(' USD Para BRL',
+                      style: TextStyle(
+                        // color: Colors.amber,
+                      ),
+                    
+                    ),
                   ],
                 ),
                 Container(
@@ -63,16 +74,18 @@ class HomeView extends StatelessWidget {
                     
                   ),
                 ),
+                SizedBox(height: 14,),
                 RaisedButton(
                  child: Text('Converter',
-                 style: TextStyle(color: Colors.white),
+                 style: TextStyle(color: Colors.black),
                  ),
-                 color: Colors.green,
+                 color: Colors.blueAccent,
                  onPressed: (){
                    controller.conversor();
                  },
                  
                 ),
+                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                    crossAxisAlignment: CrossAxisAlignment.center,
@@ -81,7 +94,7 @@ class HomeView extends StatelessWidget {
                       builder: (valor) {
                         return Text('Valor é = ${ valor.valortotal.value.toStringAsFixed(2).toString()}\$',
                          style: TextStyle( 
-                           color: Colors.green
+                           color: Colors.white
                            ,
                            fontSize: 20,
                            fontWeight: FontWeight.bold,
