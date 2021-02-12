@@ -1,5 +1,4 @@
 import 'package:conversordemoedas/home/controllers/home_controller.dart';
-import 'package:conversordemoedas/home/widgets/converso_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 //import '../widgets/converso_widget.dart';
