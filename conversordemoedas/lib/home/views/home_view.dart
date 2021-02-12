@@ -81,7 +81,7 @@ class HomeView extends StatelessWidget {
                  ),
                  color: Colors.blueAccent,
                  onPressed: (){
-                   controller.conversor();
+                   controller.conversor("USD");
                  },
                  
                 ),

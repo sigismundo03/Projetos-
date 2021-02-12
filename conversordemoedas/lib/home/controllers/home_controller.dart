@@ -9,10 +9,10 @@ class Controller extends GetxController{
   var numero = 0.0.obs;
   var valortotal = 0.0.obs;
   
-  void conversor() async{
+  void conversor(String moeda) async{
     Api api = Api();
 
-    final response = await api.fetchData();
+    final response = await api.fetchData(moeda);
 
     if(response == null){
       Get.snackbar(
