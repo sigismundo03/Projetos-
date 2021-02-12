@@ -1,4 +1,5 @@
 import 'package:conversordemoedas/home/controllers/home_controller.dart';
+import 'package:conversordemoedas/home/widgets/converso_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 //import '../widgets/converso_widget.dart';
@@ -8,6 +9,29 @@ import '../widgets/drawer_widget.dart';
 class HomeView extends StatelessWidget {
   
   Controller controller = Get.put(Controller());
+
+ final nomes = [
+    {
+      "nome":' BRL PARA USD ',
+      "nomedamoeda": "USD", 
+    },
+    {
+      "nome":'BRL PARA CAD',
+      "nomedamoeda": "CAD", 
+    },
+    {
+      "nome":'BRL Para  AUD ',
+      "nomedamoeda": "AUD", 
+    },
+    {
+      "nome":'BRL Para EUR ',
+      "nomedamoeda": "EUR", 
+    },
+    {
+      "nome":'BRL Para  GB',
+      "nomedamoeda": "GB", 
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     
@@ -26,9 +50,18 @@ class HomeView extends StatelessWidget {
       child: DrawerWidget(),
     ),
     // body: ListView.builder(
-    //     itemCount: 5,
+    //     itemCount: nomes.length,
     //     itemBuilder: (context,index){
-    //         return ConversoWidget();
+    //         return  GetX<Controller>(
+    //           builder: ( snapshot) {
+    //             return ConversoWidget(
+    //               nomes[index]["nome"],
+    //               (){ controller.conversor(nomes[index]["nomedamoeda"]);},
+    //               snapshot.valortotal.value,
+                
+    //           );
+    //           }
+    //         );
     //     },    
       
     
