@@ -1,4 +1,5 @@
-import 'package:conversordemoedas/home/model/home_model.dart';
+// import 'package:conversordemoedas/home/model/home_model.dart';
+import 'package:conversordemoedas/home/model/Listademoeda_model.dart';
 import 'package:conversordemoedas/home/repository/home_repository.dart';
 import 'package:get/get.dart';
 
@@ -33,7 +34,7 @@ class Controller extends GetxController{
 
 
   void multiplica(){
-    valortotal.value  = numero.value * data.usdBrl;
+    valortotal.value  = numero.value * double.parse(data.moeda.ask);
     
 
   }

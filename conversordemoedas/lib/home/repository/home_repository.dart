@@ -1,12 +1,14 @@
-import 'package:conversordemoedas/home/model/home_model.dart';
+// import 'package:conversordemoedas/home/model/home_model.dart';
 // import 'package:conversordemoedas/home/utils/url.dart';
+import 'package:conversordemoedas/home/model/Listademoeda_model.dart';
 import 'package:dio/dio.dart';
 
 class Api{
   Future<ApiModel> fetchData() async{
     
     try{
-      final reponse = await Dio().get('https://free.currconv.com/api/v7/convert?q=USD_BRL&compact=ultra&apiKey=chave para api');
+      // final reponse = await Dio().get('https://free.currconv.com/api/v7/convert?q=USD_BRL&compact=ultra&apiKey=chave para api');
+      final reponse = await Dio().get('https://economia.awesomeapi.com.br/all/BTC-BRl');
       if(reponse.statusCode ==200){
         return ApiModel.fromJson(reponse.data);
       }
