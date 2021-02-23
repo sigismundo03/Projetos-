@@ -9,28 +9,7 @@ class HomeView extends StatelessWidget {
   
   Controller controller = Get.put(Controller());
 
- final nomes = [
-    {
-      "nome":' BRL PARA USD ',
-      "nomedamoeda": "USD", 
-    },
-    {
-      "nome":'BRL PARA CAD',
-      "nomedamoeda": "CAD", 
-    },
-    {
-      "nome":'BRL Para  AUD ',
-      "nomedamoeda": "AUD", 
-    },
-    {
-      "nome":'BRL Para EUR ',
-      "nomedamoeda": "EUR", 
-    },
-    {
-      "nome":'BRL Para  GB',
-      "nomedamoeda": "GB", 
-    },
-  ];
+ 
   @override
   Widget build(BuildContext context) {
     

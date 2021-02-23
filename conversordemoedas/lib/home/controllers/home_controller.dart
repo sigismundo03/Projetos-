@@ -8,8 +8,9 @@ class Controller extends GetxController{
   ApiModel data;
   var numero = 0.0.obs;
   var valortotal = 0.0.obs;
+  var criptmoeda = 1.0.obs;
   
-  void conversor(String moeda) async{
+  Future<void> conversor(String moeda) async{
     Api api = Api();
 
     final response = await api.fetchData(moeda);
@@ -28,15 +29,15 @@ class Controller extends GetxController{
   void getNumero(String numer){
      numero.value = double.parse(numer);
       valortotal.value = 0.0;
-    
 
   }
 
 
   void multiplica(){
     valortotal.value  = numero.value * double.parse(data.moeda.ask);
-    
-
+  }
+    void valorCriptmoeda(){
+    criptmoeda.value  = 1 * double.parse(data.moeda.ask);
   }
   }
 
