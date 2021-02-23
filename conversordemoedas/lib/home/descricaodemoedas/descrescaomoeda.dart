@@ -2,6 +2,7 @@ class Desscricaodemoedas{
 
 static final descricaodemoedas = {
   'BTC': {
+    'imagem':'https://cdn.pixabay.com/photo/2017/01/25/15/42/bitcoin-2008262_960_720.jpg',
   'texto' : "Sigla: BTC\n"
                         "Tipo: Criptomoeda",
  
@@ -26,6 +27,7 @@ static final descricaodemoedas = {
 },
 
   'ETH': {
+    'imagem':'https://cdn.pixabay.com/photo/2020/08/23/20/20/ethereum-5511937_960_720.jpg',
   'texto' : "Sigla:ETH\n"
            "Tipo: Criptomoeda",
  
@@ -57,6 +59,8 @@ r" após um hacker encontrar uma falha e roubar cerca de US$ 50 milhões de Ethe
 
 
   'LTC': {
+
+  'imagem':'https://cdn.pixabay.com/photo/2018/04/23/17/03/litecoin-3344896_960_720.jpg',
   'texto' : "Sigla:LTC\n"
            "Tipo: Criptomoeda",
  
@@ -81,6 +85,7 @@ r" após um hacker encontrar uma falha e roubar cerca de US$ 50 milhões de Ethe
 
 
   'XRP': {
+  'imagem': 'https://cdn.pixabay.com/photo/2018/01/16/01/02/cryptocurrency-3085139_960_720.jpg',
   'texto' : "Sigla:XRP\n"
            "Tipo: Criptomoeda",
  

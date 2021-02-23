@@ -54,69 +54,77 @@ class HomeView extends StatelessWidget {
           elevation: 10,
           child: Padding(
             padding:  EdgeInsets.all(10.0),
-            child:Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Row(
-                   mainAxisAlignment: MainAxisAlignment.start,
-                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(' USD Para BRL',
-                      style: TextStyle(
-                        // color: Colors.amber,
-                      ),
-                    
-                    ),
-                  ],
-                ),
-                Container(
-                  child: TextFormField(
-                    onChanged:controller.getNumero,
-                    decoration: InputDecoration(
-                    
-                      hintText: "Digite o Valor",
-                      border: OutlineInputBorder(
-                       borderRadius: BorderRadius.all(Radius.circular(2)),
-                       
-                      )
-                    
-                    ),
-                    
-                  ),
-                ),
-                SizedBox(height: 14,),
-                RaisedButton(
-                 child: Text('Converter',
-                 style: TextStyle(color: Colors.black),
-                 ),
-                 color: Colors.blueAccent,
-                 onPressed: (){
-                   controller.conversor("USD");
-                 },
-                 
-                ),
-                
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    GetX<Controller>(
-                      builder: (valor) {
-                        return Text('Valor é = ${ valor.valortotal.value.toStringAsFixed(2).toString()}\$',
-                         style: TextStyle( 
-                           color: Colors.white
-                           ,
-                           fontSize: 20,
-                           fontWeight: FontWeight.bold,
+            child:  GetX<Controller>(
+                builder: (snpshot) {
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                     mainAxisAlignment: MainAxisAlignment.start,
+                     crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(' USD Para BRL',
+                        style: TextStyle(
+                          // color: Colors.amber,
                         ),
-                        );
-                      }
+                      
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: TextFormField(
+                      onChanged:controller.getNumero,
+                      decoration: InputDecoration(
+                      
+                        hintText: "Digite o Valor",
+                        border: OutlineInputBorder(
+                         borderRadius: BorderRadius.all(Radius.circular(2)),
+                         
+                        )
+                      
+                      ),
+                      
                     ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                  SizedBox(height: 14,),
+                    snpshot.isload.value ? Center(
+                     child: CircularProgressIndicator(),
+                   ) 
+                   :  
+                    RaisedButton(
+                   child: Text('Converter',
+                   style: TextStyle(color: Colors.black),
+                   ),
+                   color: Colors.blueAccent,
+                   onPressed: (){
+                     controller.conversor("USD");
+                   },
+                   
+                  ),
+                  
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                     crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      // GetX<Controller>(
+                      // : (valor) {
+                          Text('Valor é = ${ snpshot.valortotal.value.toStringAsFixed(2).toString()}\$',
+                           style: TextStyle( 
+                             color: Colors.white
+                             ,
+                             fontSize: 20,
+                             fontWeight: FontWeight.bold,
+                          ),
+                          ),
+                        // }
+                      // ),
+                    ],
+                  ),
+                ],
+              );
+            },
+          ),
           ),
         ),
       ),

@@ -9,18 +9,20 @@ class Controller extends GetxController{
   var numero = 0.0.obs;
   var valortotal = 0.0.obs;
   var criptmoeda = 1.0.obs;
+  var isload = false.obs;
   
   Future<void> conversor(String moeda) async{
     Api api = Api();
-
+    isload.value = true;
     final response = await api.fetchData(moeda);
-
+    
     if(response == null){
       Get.snackbar(
         'Error',
         'Normomento não esta conseguindo conveter!'
       );
     } else{
+      isload.value = false;
       data = response;
       multiplica();
 

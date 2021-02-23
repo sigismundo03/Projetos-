@@ -43,7 +43,7 @@ class DetalheView extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child:Card(
                     elevation: 08,
-                    child: Image.network("https://cdn.pixabay.com/photo/2018/05/17/21/26/cryptocurrency-3409725_960_720.jpg",
+                    child: Image.network(descricao[Get.arguments]['imagem'],
                       width: double.infinity,
                       height: 190,
                       fit: BoxFit.cover,
@@ -60,7 +60,7 @@ class DetalheView extends StatelessWidget {
                      style: TextStyle(color: Colors.amber)
                     ),
 
-                    subtitle: Text("REAIS )",
+                    subtitle: Text("REAIS",
                      style: TextStyle(color: Colors.amber)
                     ),
                   ),
