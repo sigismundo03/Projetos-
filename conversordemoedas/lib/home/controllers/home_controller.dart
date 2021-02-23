@@ -10,30 +10,50 @@ class Controller extends GetxController{
   var valortotal = 0.0.obs;
   var criptmoeda = 1.0.obs;
   var isload = false.obs;
+
+  void _isload(){
+     isload.value=! isload.value;
+  }
+  bool _notIscriptmoeda(String moeda){
+    return (moeda != 'BTC' && moeda !='XRP' && moeda !='LTC' && moeda !='ETH');
+  }
   
   Future<void> conversor(String moeda) async{
     Api api = Api();
-    isload.value = true;
+    if(_notIscriptmoeda(moeda)){
+       _isload();
+    }
     final response = await api.fetchData(moeda);
     
     if(response == null){
+        if(_notIscriptmoeda(moeda)){
+        _isload();
+    }
       Get.snackbar(
         'Error',
         'Normomento não esta conseguindo conveter!'
       );
     } else{
-      isload.value = false;
+      if(_notIscriptmoeda(moeda)){
+       _isload();
+      }
       data = response;
-      multiplica();
+
+      if(_notIscriptmoeda(moeda)){
+         multiplica();
+      }
+     
 
     }
   }
   void getNumero(String numer){
      numero.value = double.parse(numer);
-      valortotal.value = 0.0;
+     limparmoedas();
 
   }
-
+   void limparmoedas(){
+      valortotal.value = 0.0;
+   }
 
   void multiplica(){
     valortotal.value  = numero.value * double.parse(data.moeda.ask);

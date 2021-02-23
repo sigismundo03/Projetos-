@@ -32,7 +32,6 @@ class DetalheView extends StatelessWidget {
           initState: (_) async {
             await controller.conversor(Get.arguments);
               
-            
             controller.valorCriptmoeda();
           },
                    
@@ -53,7 +52,11 @@ class DetalheView extends StatelessWidget {
                   ),
                 ),
 
-                Card(
+              // snapshot.isload.value ? Center(
+              //        child: CircularProgressIndicator(),
+              //      ) 
+              //      :  
+                    Card(
                   elevation: 5.0,
                   child: ListTile(
                     title: Text("${snapshot.criptmoeda.value}  R\$",

@@ -55,7 +55,11 @@ class HomeView extends StatelessWidget {
           child: Padding(
             padding:  EdgeInsets.all(10.0),
             child:  GetX<Controller>(
-                builder: (snpshot) {
+               init: controller,
+              initState: (_){
+                controller.limparmoedas();
+              },
+              builder: ( snapshot) {
               return Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,7 +68,7 @@ class HomeView extends StatelessWidget {
                      mainAxisAlignment: MainAxisAlignment.start,
                      crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(' USD Para BRL',
+                      Text(' BRL Para USD',
                         style: TextStyle(
                           // color: Colors.amber,
                         ),
@@ -75,8 +79,8 @@ class HomeView extends StatelessWidget {
                   Container(
                     child: TextFormField(
                       onChanged:controller.getNumero,
+                      keyboardType: TextInputType.numberWithOptions(),
                       decoration: InputDecoration(
-                      
                         hintText: "Digite o Valor",
                         border: OutlineInputBorder(
                          borderRadius: BorderRadius.all(Radius.circular(2)),
@@ -88,7 +92,7 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 14,),
-                    snpshot.isload.value ? Center(
+                     snapshot.isload.value ? Center(
                      child: CircularProgressIndicator(),
                    ) 
                    :  
@@ -109,7 +113,7 @@ class HomeView extends StatelessWidget {
                     children: [
                       // GetX<Controller>(
                       // : (valor) {
-                          Text('Valor é = ${ snpshot.valortotal.value.toStringAsFixed(2).toString()}\$',
+                          Text('Valor é = ${  snapshot.valortotal.value.toStringAsFixed(2).toString()}\$',
                            style: TextStyle( 
                              color: Colors.white
                              ,
