@@ -4,29 +4,13 @@ import 'package:conversordemoedas/home/controllers/home_controller.dart';
 import 'package:conversordemoedas/home/widgets/drawer_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../descricaodemoedas/descrescaomoeda.dart';
 
 // ignore: must_be_immutable
 class DetalheView extends StatelessWidget {
   Controller controller = Get.put(Controller());
-  final  String texto = "Sigla: BTC\n"
-                        "Tipo: Criptomoeda";
-  final  String descricao = "O Bitcoin surgiu em 2008 como uma resposta à crise financeira,"
-"com a ideia de substituir o dinheiro físico que usamos e, "
-"principalmente, tirar a necessidade de intermediação dos bancos nas" 
-"operações financeiras."
-
-"A criptomoeda apareceu pela primeira vez em um artigo publicado por Satoshi "
-"Nakamoto, um pseudônimo que até hoje não se sabe se é uma pessoa ou "
-"um grupo de pessoas. O texto descrevia como funcionava esta moeda digital e"
-"criava o sistema que posteriormente passou a ser chamado de “blockchain”," 
-"que é como um livro-razão que registra todas as operações."
-
-"Seu uso foi pensado para ser exatamente uma moeda digital," 
-"usada para realizar compras e fazer transações de forma segura," 
-"anônima e com rapidez. Apesar disso, diante de sua forte volatilidade e" 
-"aumento de valor, se tornou um investimento de alto risco, "
-"sendo considerados por muitos especialistas também uma reserva de valor," 
-"como o ouro.";
+ var descricao = Desscricaodemoedas.descricaodemoedas;
+     
 
   @override
   Widget build(BuildContext context) {
@@ -43,13 +27,15 @@ class DetalheView extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(6.0),
         child: GetX<Controller>(
-          init: controller,
+
+         init: controller,
           initState: (_) async {
             await controller.conversor(Get.arguments);
               
             
             controller.valorCriptmoeda();
-          },         
+          },
+                   
           builder: (snapshot) {
             return Column(
               children: [
@@ -70,25 +56,25 @@ class DetalheView extends StatelessWidget {
                 Card(
                   elevation: 5.0,
                   child: ListTile(
-                    title: Text("${snapshot.criptmoeda.value}",
+                    title: Text("${snapshot.criptmoeda.value}  R\$",
                      style: TextStyle(color: Colors.amber)
                     ),
 
-                    subtitle: Text("REAIS (BRL - R\$)",
+                    subtitle: Text("REAIS )",
                      style: TextStyle(color: Colors.amber)
                     ),
                   ),
                 ),
                 SizedBox(height: 20,),
                 Center(
-                 child: Text(texto,
+                 child: Text( descricao[Get.arguments]['texto'],
                   style: TextStyle(color: Colors.amber)
                 )
                  
                 ),
                  SizedBox(height: 20,),
                  Center(
-                 child: Text(descricao,
+                 child: Text(descricao[Get.arguments]['descricao'],
                   style: TextStyle(color: Colors.amber)
                 )
                   

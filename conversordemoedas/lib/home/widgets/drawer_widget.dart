@@ -5,6 +5,7 @@ import 'package:get/route_manager.dart';
 // FontAwesomeIcons.dollarSign
 class DrawerWidget extends StatelessWidget {
   final Color cor = Colors.amber;
+
   title(String name, IconData icons, Function onetap) {
     return Container(
       decoration: BoxDecoration(
@@ -31,8 +32,8 @@ class DrawerWidget extends StatelessWidget {
   }
   void navegacao (String name, String argument ){
        Get.back();
-          Get.back();
-          Get.offNamed(name, arguments: argument);
+       Get.back();
+       Get.toNamed(name, arguments: argument);
   }
 
   @override
