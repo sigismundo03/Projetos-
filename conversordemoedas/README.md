@@ -1,16 +1,17 @@
-# conversordemoedas
 
-A new Flutter project.
+
 
 # Conversor de moedas
 
+<br>
+<br>
 <h1 aling = "center">
 <img src = "./assets/images/conversor.gif">
 
 </h1>
 
 ##  Sobre
-**Este projeto tem como objetivo converter a moeda BRL para USD e também mostra o valor das criptomoedas, através de uma API e usar uma arquitetura MVC para ajudar nesse processo**  
+**Este projeto tem como objetivo converter a moeda USD para BRL e também mostra o valor das criptomoedas, através de uma API e usar uma arquitetura MVC para ajudar nesse processo**  
 
 ## 🔨 Ferramentas
 

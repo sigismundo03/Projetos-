@@ -68,7 +68,7 @@ class HomeView extends StatelessWidget {
                      mainAxisAlignment: MainAxisAlignment.start,
                      crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(' BRL Para USD',
+                      Text(' USD Para BRL',
                         style: TextStyle(
                           // color: Colors.amber,
                         ),
