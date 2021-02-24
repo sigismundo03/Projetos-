@@ -21,4 +21,4 @@
 - [Dio](https://pub.dev/packages/dio)
 - [Get](https://pub.dev/packages/get)
 - [font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter)
-- [URL da Api](https://free.currencyconverterapi.com/)
+- [URL da Api](https://docs.awesomeapi.com.br/api-de-moedas)
