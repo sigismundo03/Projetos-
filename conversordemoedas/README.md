@@ -10,6 +10,13 @@
 
 </h1>
 
+# Imagens
+<h1>
+
+<img src = "./images/2.jpeg">
+<img src = "./images/3.jpeg">
+</h1>
+
 ##  Sobre
 **Este projeto tem como objetivo converter a moeda USD para BRL e também mostra o valor das criptomoedas, através de uma API e usar uma arquitetura MVC para ajudar nesse processo**  
 
