@@ -4,11 +4,10 @@
 ## Projetos que serão Desenvolvidos 
 
 - [Converso de moedas](https://github.com/sigismundo03/Projetos-/tree/main/conversordemoedas)
-<img src = "./images/1.jpeg">
+<h1><img src = "./images/1.jpeg">
 <img src = "./images/3.jpeg">
-<br>
-<br>
-<br>
+</h1>
+
 - Rádio
 - Loja de frutas legumes e verduras
 
