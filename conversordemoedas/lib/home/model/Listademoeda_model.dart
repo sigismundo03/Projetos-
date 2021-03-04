@@ -9,7 +9,7 @@
         this.moeda,
     });
 
-    final Moeda moeda;
+    final Moeda? moeda;
 
     factory ApiModel.fromRawJson(String str) => ApiModel.fromJson(json.decode(str));
 
@@ -85,7 +85,7 @@
     } 
 
     Map<String, dynamic> toJson() => {
-        "BTC": moeda == null ? null : moeda.toJson(),
+        "BTC": moeda == null ? null : moeda!.toJson(),
     };
 }
 
@@ -104,17 +104,17 @@ class Moeda {
         this.createDate,
     });
 
-    final String code;
-    final String codein;
-    final String name;
-    final String high;
-    final String low;
-    final String varBid;
-    final String pctChange;
-    final String bid;
-    final String ask;
-    final String timestamp;
-    final DateTime createDate;
+    final String? code;
+    final String? codein;
+    final String? name;
+    final String? high;
+    final String? low;
+    final String? varBid;
+    final String? pctChange;
+    final String? bid;
+    final String? ask;
+    final String? timestamp;
+    final DateTime? createDate;
 
     factory Moeda.fromRawJson(String str) => Moeda.fromJson(json.decode(str));
 
@@ -145,7 +145,7 @@ class Moeda {
         "bid": bid == null ? null : bid,
         "ask": ask == null ? null : ask,
         "timestamp": timestamp == null ? null : timestamp,
-        "create_date": createDate == null ? null : createDate.toIso8601String(),
+        "create_date": createDate == null ? null : createDate!.toIso8601String(),
     };
 }
 // class ApiModel {

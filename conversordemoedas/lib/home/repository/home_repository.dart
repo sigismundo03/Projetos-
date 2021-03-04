@@ -4,7 +4,7 @@ import 'package:conversordemoedas/home/model/Listademoeda_model.dart';
 import 'package:dio/dio.dart';
 
 class Api{
-  Future<ApiModel> fetchData( String moeda) async{
+  Future<ApiModel?> fetchData( String? moeda) async{
     
     try{
       // final reponse = await Dio().get('https://free.currconv.com/api/v7/convert?q=USD_BRL&compact=ultra&apiKey=chave para api');

@@ -42,7 +42,7 @@ class DetalheView extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child:Card(
                     elevation: 08,
-                    child: Image.network(descricao[Get.arguments]['imagem'],
+                    child: Image.network(descricao[Get.arguments]!['imagem']!,
                       width: double.infinity,
                       height: 190,
                       fit: BoxFit.cover,
@@ -70,14 +70,14 @@ class DetalheView extends StatelessWidget {
                 ),
                 SizedBox(height: 20,),
                 Center(
-                 child: Text( descricao[Get.arguments]['texto'],
+                 child: Text( descricao[Get.arguments]!['texto']!,
                   style: TextStyle(color: Colors.amber)
                 )
                  
                 ),
                  SizedBox(height: 20,),
                  Center(
-                 child: Text(descricao[Get.arguments]['descricao'],
+                 child: Text(descricao[Get.arguments]!['descricao']!,
                   style: TextStyle(color: Colors.amber)
                 )
                   

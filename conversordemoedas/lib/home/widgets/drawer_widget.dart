@@ -26,7 +26,7 @@ class DrawerWidget extends StatelessWidget {
           Icons.arrow_right,
           color: cor,
         ),
-        onTap: onetap,
+        onTap: onetap as void Function()?,
       ),
     );
   }

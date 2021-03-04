@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 class Controller extends GetxController{
   static Controller get to => Get.find();
-  ApiModel data;
+  late ApiModel data;
   var numero = 0.0.obs;
   var valortotal = 0.0.obs;
   var criptmoeda = 1.0.obs;
@@ -14,11 +14,11 @@ class Controller extends GetxController{
   void _isload(){
      isload.value=! isload.value;
   }
-  bool _notIscriptmoeda(String moeda){
+  bool _notIscriptmoeda(String? moeda){
     return (moeda != 'BTC' && moeda !='XRP' && moeda !='LTC' && moeda !='ETH');
   }
   
-  Future<void> conversor(String moeda) async{
+  Future<void> conversor(String? moeda) async{
     Api api = Api();
     if(_notIscriptmoeda(moeda)){
        _isload();
@@ -56,10 +56,10 @@ class Controller extends GetxController{
    }
 
   void multiplica(){
-    valortotal.value  = numero.value * double.parse(data.moeda.ask);
+    valortotal.value  = numero.value * double.parse(data.moeda!.ask!);
   }
     void valorCriptmoeda(){
-    criptmoeda.value  = 1 * double.parse(data.moeda.ask);
+    criptmoeda.value  = 1 * double.parse(data.moeda!.ask!);
   }
   }
 
