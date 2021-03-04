@@ -1,6 +1,8 @@
 // import 'package:conversordemoedas/home/model/home_model.dart';
 // import 'package:conversordemoedas/home/utils/url.dart';
+
 import 'package:conversordemoedas/home/model/Listademoeda_model.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:dio/dio.dart';
 
 class Api{

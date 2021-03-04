@@ -1,5 +1,6 @@
 import 'package:conversordemoedas/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:get/get.dart';
 //import '../widgets/converso_widget.dart';
 import '../widgets/drawer_widget.dart';
@@ -96,11 +97,10 @@ class HomeView extends StatelessWidget {
                      child: CircularProgressIndicator(),
                    ) 
                    :  
-                    RaisedButton(
+                   ElevatedButton(
                    child: Text('Converter',
                    style: TextStyle(color: Colors.black),
                    ),
-                   color: Colors.blueAccent,
                    onPressed: (){
                      controller.conversor("USD");
                    },

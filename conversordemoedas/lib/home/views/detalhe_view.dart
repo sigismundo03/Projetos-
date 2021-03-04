@@ -3,6 +3,7 @@
 import 'package:conversordemoedas/home/controllers/home_controller.dart';
 import 'package:conversordemoedas/home/widgets/drawer_widget.dart';
 import 'package:flutter/material.dart';
+// ignore: import_of_legacy_library_into_null_safe
 import 'package:get/get.dart';
 import '../descricaodemoedas/descrescaomoeda.dart';
 
